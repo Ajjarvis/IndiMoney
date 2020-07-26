@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item  android:top="-6dp" android:left="-6dp" android:right="-6dp" android:drawable="@color/colorPrimaryLight" android:state_checked="true">
+        <shape android:shape="ring">
+            <solid android:color="@color/colorPrimary"/>
+            <size android:width="2dp" android:height="6dp"/>
+        </shape>
+    </item>
+    <item android:drawable="@color/colorPrimary"/>
+</selector>

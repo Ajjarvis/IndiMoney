@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.img2Text">
+
+
+    <EditText
+        android:id="@+id/resultEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="all"
+        android:background="@null"
+        android:editable="false"
+        android:gravity="center"
+        android:hint="Result will be displayed here..."
+        android:padding="5dp"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageIv"
+        app:layout_constraintVertical_bias="0.076"
+        tools:layout_editor_absoluteX="26dp" />
+
+    <ImageView
+        android:id="@+id/imageIv"
+        android:layout_width="360dp"
+        android:layout_height="295dp"
+        android:src="@drawable/ic_action_image"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.074" />
+
+    <ImageButton
+        android:id="@+id/imgbtn"
+        android:layout_width="60dp"
+        android:layout_height="63dp"
+        android:clickable="true"
+        android:onClick="newfun"
+        android:src="@drawable/plusbtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultEt"
+        app:layout_constraintVertical_bias="0.605" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

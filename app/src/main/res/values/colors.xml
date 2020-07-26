@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#831B95</color>
+    <color name="colorPrimaryDark">#84019A</color>
+    <color name="colorAccent">#9B2CAE</color>
+    <color name="colorPrimaryLight">#DE4FF6</color>
+    <color name="colorText">#212121</color>
+    <color name="colorSecondaryText">#FFFFFF</color>
+    <color name="colorSecondaryText2">#757575</color>
+    <color name="ColorDivider">#BDBDBD</color>
+
+    <color name="colorNavigationIcon">#dae9f6</color>
+    <color name="colorNavigationText">#ffffff</color>
+
+    <color name="screen1">#03A9F4</color>
+    <color name="screen2">#43A047</color>
+    <color name="screen3">#BD3F3F</color>
+    <color name="screen4">#212121</color>
+
+    <color name="orange">#FF5722</color>
+    <color name="green">#4CAF50</color>
+    <color name="blue">#1E88E5</color>
+
+    <color name="dot_dark1">#0D47A1</color>
+    <color name="dot_dark2">#006064</color>
+    <color name="dot_dark3">#1B5E20</color>
+    <color name="dot_dark4">#33691E</color>
+
+    <color name="dot_light1">#64B5F6</color>
+    <color name="dot_light2">#80DEEA</color>
+    <color name="dot_light3">#81C784</color>
+    <color name="dot_light4">#C8E6C9</color>
+
+    <color name="dot_active_dark1">#0D47A1</color>
+    <color name="dot_active_dark2">#006064</color>
+    <color name="dot_active_dark3">#1B5E20</color>
+    <color name="dot_active_dark4">#33691E</color>
+
+    <color name="dot_active_light1">#64B5F6</color>
+    <color name="dot_active_light2">#80DEEA</color>
+    <color name="dot_active_light3">#81C784</color>
+    <color name="dot_active_light4">#C8E6C9</color>
+
+    <array name="dot_active">
+        <item>@color/dot_dark1</item>
+        <item>@color/dot_dark2</item>
+        <item>@color/dot_dark3</item>
+        <item>@color/dot_dark4</item>
+    </array>
+
+    <array name="dot_inactive">
+        <item>@color/dot_light1</item>
+        <item>@color/dot_light2</item>
+        <item>@color/dot_light3</item>
+        <item>@color/dot_light4</item>
+    </array>
+</resources>

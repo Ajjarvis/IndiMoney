@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/layout_row_images"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp">
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginRight="5dp"
+        android:padding="5dp">
+
+        <ImageView
+            android:id="@+id/list_image"
+            android:layout_width="70dp"
+            android:layout_height="50dp"
+            android:src="@drawable/rupees_g" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:text="Buy Rice"
+                android:textColor="#424242"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+            <TextView
+                android:id="@+id/type_trx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="5dp"
+                android:gravity="right"
+                android:text="Type"
+                android:textColor="#424242"
+                android:textSize="13dp"
+                android:textStyle="bold"
+                android:typeface="sans" />
+
+        </LinearLayout>
+
+    <TextView
+        android:id="@+id/money"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="Rs. 20.000"
+        android:textColor="#616161"
+        android:textSize="15dp" />
+
+    <TextView
+        android:id="@+id/tglTrx"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/money"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:text="2016-08-19"
+        android:textColor="#BDBDBD" />
+
+    </LinearLayout>
+</RelativeLayout>
