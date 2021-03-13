@@ -240,8 +240,8 @@
 
                             <ImageButton
                                 android:id="@+id/addbills"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
+                                android:layout_width="88dp"
+                                android:layout_height="89dp"
                                 android:layout_weight="0"
                                 android:backgroundTint="#00ffffff"
                                 android:maxWidth="5dp"
@@ -254,7 +254,7 @@
                                 android:text="Add bills" />
                         </LinearLayout>
                     </FrameLayout>
-                    
+
                     <FrameLayout
                         app:layout_columnWeight="1"
                         app:layout_gravity="center"

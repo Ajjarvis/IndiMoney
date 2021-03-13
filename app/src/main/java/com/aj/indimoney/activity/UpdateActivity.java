@@ -72,7 +72,7 @@ public class UpdateActivity extends AppCompatActivity {
             dateText.setText(cursor.getString(4).toString());
         }
 
-        if (cursor.getString(3).toString().equals("Enter")) {
+        if (cursor.getString(3).toString().equals("Income")) {
             radioincome.setChecked(true);
         } else {
             radioexpense.setChecked(true);
@@ -92,9 +92,9 @@ public class UpdateActivity extends AppCompatActivity {
                         if (validate()) {
                             String type = "";
                             if (radioincome.isChecked()) {
-                                type = "Enter";
+                                type = "Income";
                             } else if (radioexpense.isChecked()) {
-                                type = "Exit";
+                                type = "Expense";
                             } else {
                                 type = "type";
                             }
@@ -112,19 +112,19 @@ public class UpdateActivity extends AppCompatActivity {
                             Integer balance = 0;
                             Integer balance2 = 0;
                             Integer balance3 = 0;
-                            String typeku = typeText.getText().toString();
+                            String money_type = typeText.getText().toString();
                             Integer moneyku = Integer.parseInt(moneyText.getText().toString());
                             Integer moneyku2 = Integer.parseInt(moneyText2.getText().toString());
                             try {
-                                if (type.equals("Exit") && typeku.equals("Exit")) {
+                                if (type.equals("Expense") && money_type.equals("Expense")) {
                                     balance3 = (user.getInt("expense") - moneyku2) + moneyku;
                                     balance2 = user.getInt("income");
                                     balance = (user.getInt("money") + moneyku2) - moneyku;
-                                } else if (type.equals("Enter") && typeku.equals("Enter")) {
+                                } else if (type.equals("Income") && money_type.equals("Income")) {
                                     balance3 = user.getInt("expense");
                                     balance2 = (user.getInt("income") - moneyku2) + moneyku;
                                     balance = (user.getInt("money") - moneyku2) + moneyku;
-                                } else if (type.equals("Exit") && typeku.equals("Enter")) {
+                                } else if (type.equals("Expense") && money_type.equals("Income")) {
                                     balance3 = user.getInt("expense") + moneyku;
                                     balance2 = (user.getInt("income") - moneyku2);
                                     balance = (user.getInt("money") - moneyku2) - moneyku;

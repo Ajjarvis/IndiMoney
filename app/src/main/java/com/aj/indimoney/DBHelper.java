@@ -17,19 +17,19 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         Log.w("Version", "Current Version is " + db.getVersion());
-        String queryBuatTable = "CREATE TABLE IF NOT EXISTS tb_indiMoney (id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        String queryCreateTable = "CREATE TABLE IF NOT EXISTS tb_indiMoney (id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "utilities text," +
                 "money int," +
                 "type text," +
                 "date text )";
-        String queryBuatTableWallet = "CREATE TABLE IF NOT EXISTS tb_user (id INTEGER PRIMARY KEY AUTOINCREMENT," +
+        String queryCreateTableWallet = "CREATE TABLE IF NOT EXISTS tb_user (id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "name text," +
                 "email text," +
                 "income int," +
                 "expense int," +
                 "money int )";
-        db.execSQL(queryBuatTable);
-        db.execSQL(queryBuatTableWallet);
+        db.execSQL(queryCreateTable);
+        db.execSQL(queryCreateTableWallet);
     }
 
     @Override

@@ -29,7 +29,7 @@ public class DeleteActivity extends AppCompatActivity {
     TextView cancel;
     protected Cursor cursor;
     DBHelper dbHelper;
-    Button hapus;
+    Button delete;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,26 +71,26 @@ public class DeleteActivity extends AppCompatActivity {
             dateText.setText(cursor.getString(4).toString());
         }
 
-        if (cursor.getString(3).toString().equals("Enter")) {
+        if (cursor.getString(3).toString().equals("Income")) {
             radioincome.setChecked(true);
         } else {
             radioexpense.setChecked(true);
         }
 
-        hapus = (Button) findViewById(R.id.buttonHapus);
+        delete = (Button) findViewById(R.id.buttonDelete);
         cancel = (TextView) findViewById(R.id.textViewCancel);
-        hapus.setOnClickListener(new View.OnClickListener() {
+        delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View arg0) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(DeleteActivity.this);
                 builder.setCancelable(true);
-                builder.setMessage("Yakin ingin menghapus data ?");
+                builder.setMessage("Are you sure you want to delete data?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        String idku = IDText.getText().toString();
+                        String my_id = IDText.getText().toString();
                         SQLiteDatabase db = dbHelper.getWritableDatabase();
-                        db.execSQL("delete from tb_indiMoney where id = '" + idku + "'");
+                        db.execSQL("delete from tb_indiMoney where id = '" + my_id + "'");
                         User dataUser = new User(DeleteActivity.this);
                         JSONObject user = dataUser.getUser();
 
@@ -100,24 +100,24 @@ public class DeleteActivity extends AppCompatActivity {
 
                         String type = "";
                         if (radioincome.isChecked()) {
-                            type = "Enter";
+                            type = "Income";
                         } else if (radioexpense.isChecked()) {
-                            type = "Exit";
+                            type = "Expense";
                         } else {
                             type = "type";
                         }
 
-                        String typeku = typeText.getText().toString();
-                        Integer moneyku = Integer.parseInt(moneyText2.getText().toString());
+                        String money_type = typeText.getText().toString();
+                        Integer money = Integer.parseInt(moneyText2.getText().toString());
                         try {
-                            if (type.equals("Exit") && typeku.equals("Exit")) {
-                                balance3 = user.getInt("expense") - moneyku;
+                            if (type.equals("Expense") && money_type.equals("Expense")) {
+                                balance3 = user.getInt("expense") - money;
                                 balance2 = user.getInt("income");
-                                balance = moneyku + user.getInt("money");
+                                balance = money + user.getInt("money");
                             } else {
                                 balance3 = user.getInt("expense");
-                                balance2 = user.getInt("income") - moneyku;
-                                balance = user.getInt("money") - moneyku;
+                                balance2 = user.getInt("income") - money;
+                                balance = user.getInt("money") - money;
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -150,7 +150,7 @@ public class DeleteActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(DeleteActivity.this);
                 builder.setCancelable(true);
-                builder.setMessage("Yakin ingin kembali ?");
+                builder.setMessage("\n" + "Are you sure you want to come back?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -173,7 +173,7 @@ public class DeleteActivity extends AppCompatActivity {
     public void onBackPressed() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setCancelable(true);
-        builder.setMessage("Yakin ingin kembali ?");
+        builder.setMessage("\n" + "Are you sure you want to come back?");
         builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {

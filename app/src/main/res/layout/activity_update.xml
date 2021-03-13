@@ -176,7 +176,7 @@
                         android:layout_gravity="center_horizontal"
                         android:layout_weight="1"
                         android:background="@drawable/rounded"
-                        android:text="Perbarui"
+                        android:text="Update"
                         android:textColor="@android:color/white" />
 
                 </LinearLayout>

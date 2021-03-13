@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.img2Text">
+    tools:context=".activity.img2Text"
+    tools:visibility="visible">
 
 
     <EditText
@@ -19,35 +20,55 @@
         android:padding="5dp"
         android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageIv"
-        app:layout_constraintVertical_bias="0.076"
-        tools:layout_editor_absoluteX="26dp" />
+        app:layout_constraintVertical_bias="0.076" />
 
     <ImageView
         android:id="@+id/imageIv"
-        android:layout_width="360dp"
-        android:layout_height="295dp"
+        android:layout_width="380dp"
+        android:layout_height="209dp"
         android:src="@drawable/ic_action_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.074" />
+        app:layout_constraintVertical_bias="0.063" />
 
     <ImageButton
         android:id="@+id/imgbtn"
-        android:layout_width="60dp"
-        android:layout_height="63dp"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:adjustViewBounds="false"
+        android:backgroundTint="#FFFFFF"
         android:clickable="true"
-        android:onClick="newfun"
-        android:src="@drawable/plusbtn"
+        android:onClick="takeImage"
+        android:scaleType="centerCrop"
+        android:src="@drawable/plus_sign"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.868"
+        app:layout_constraintHorizontal_bias="0.881"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resultEt"
-        app:layout_constraintVertical_bias="0.605" />
+        app:layout_constraintVertical_bias="0.759" />
+
+    <ImageButton
+        android:id="@+id/confirmButton"
+        android:layout_width="106dp"
+        android:layout_height="91dp"
+        android:adjustViewBounds="true"
+        android:backgroundTint="#FFFFFF"
+        android:onClick="sendRecognizedText"
+        android:scaleType="centerCrop"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imgbtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultEt"
+        app:layout_constraintVertical_bias="0.923"
+        app:srcCompat="@drawable/true_sign_1" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

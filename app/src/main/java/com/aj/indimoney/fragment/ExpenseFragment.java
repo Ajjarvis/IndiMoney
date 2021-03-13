@@ -65,7 +65,7 @@ public class ExpenseFragment extends Fragment {
 
         dbcenter = new DBHelper(getActivity());
         SQLiteDatabase db = dbcenter.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * From tb_indiMoney where type LIKE '%Exit%'", null);
+        cursor = db.rawQuery("SELECT * From tb_indiMoney where type LIKE '%Expense%'", null);
         list = new String[cursor.getCount()];
         list2 = new String[cursor.getCount()];
         list3 = new String[cursor.getCount()];

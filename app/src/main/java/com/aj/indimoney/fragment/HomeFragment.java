@@ -82,7 +82,7 @@ public class HomeFragment extends Fragment {
         export.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
-                File myDir = new File(directory_path);
+                final File myDir = new File(directory_path);
                 if (!myDir.exists()) {
                     myDir.mkdirs();
                 }
@@ -90,7 +90,6 @@ public class HomeFragment extends Fragment {
                 sqliteToExcel.exportAllTables("export.xls", new SQLiteToExcel.ExportListener() {
                     @Override
                     public void onStart() {
-
                     }
 
                     @Override

@@ -40,7 +40,7 @@ public class TransactionAdapter extends ArrayAdapter<HashMap<String, String>> {
 
         int image = R.drawable.rupees_g;
         int image2 = R.drawable.rupees_r;
-        if (tr.get("type").equals("Enter")) {
+        if (tr.get("type").equals("Income")) {
             ImageView imageView = (ImageView) convertView.findViewById(R.id.list_image);
             imageView.setImageResource(image);
             title.setTextColor(Color.parseColor("#388E3C"));

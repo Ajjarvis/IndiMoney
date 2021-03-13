@@ -116,7 +116,7 @@ public class indiMoneyActivity extends AppCompatActivity {
                 final String selection = list2[arg2];
                 final CharSequence[] dialogitem = {" Update Data  ", " Delete Data  "};
                 AlertDialog.Builder builder = new AlertDialog.Builder(indiMoneyActivity.this);
-                builder.setTitle("Selecton");
+                builder.setTitle("Selection");
                 builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int item) {
                         switch (item) {

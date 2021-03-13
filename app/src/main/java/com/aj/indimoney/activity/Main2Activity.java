@@ -154,7 +154,7 @@ public class Main2Activity extends AppCompatActivity {
         public void onPageSelected(int position) {
             addBottomDots(position);
             if (position == layouts.length - 1) {
-                btnNext.setText("MULAI");
+                btnNext.setText("NEXT");
                 btnSkip.setVisibility(View.GONE);
             } else {
                 btnNext.setText("NEXT");

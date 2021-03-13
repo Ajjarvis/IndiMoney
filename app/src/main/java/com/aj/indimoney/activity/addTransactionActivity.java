@@ -46,15 +46,15 @@ public class addTransactionActivity extends AppCompatActivity {
                 if (validate()) {
                     String type = "";
                     if (radioincome.isChecked()) {
-                        type = "Enter";
+                        type = "Income";
                     } else if (radioexpense.isChecked()) {
-                        type = "Exit";
+                        type = "Expense";
                     } else {
                         type = "type";
                     }
 
                     if (type.equals("type")){
-                        Toast.makeText(addTransactionActivity.this, "Income or Expence not Seleceted.",Toast.LENGTH_LONG).show();
+                        Toast.makeText(addTransactionActivity.this, "Income or Expense not Selected.",Toast.LENGTH_LONG).show();
                     } else {
                         Integer money = Integer.parseInt(moneyText.getText().toString());
                         dataTransaction.utilities = utilities;
@@ -69,7 +69,7 @@ public class addTransactionActivity extends AppCompatActivity {
                         Integer balance2 = 0;
                         Integer balance3 = 0;
                         try {
-                            if (type.equals("Exit")) {
+                            if (type.equals("Expense")) {
                                 balance3 = money + user.getInt("expense");
                                 balance2 = user.getInt("income");
                                 balance = user.getInt("money") - money;
@@ -131,7 +131,7 @@ public class addTransactionActivity extends AppCompatActivity {
                 textInputLayoutMoney.setError(null);
             } else {
                 valid = false;
-                textInputLayoutMoney.setError("Money is not according to rules");
+                textInputLayoutMoney.setError("Entered Money is not in Proper Manner");
             }
         }
 

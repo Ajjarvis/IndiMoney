@@ -66,7 +66,7 @@ public class IncomeFragment extends Fragment {
 
         dbcenter = new DBHelper(getActivity());
         SQLiteDatabase db = dbcenter.getReadableDatabase();
-        cursor = db.rawQuery("SELECT * From tb_indiMoney where type LIKE '%Change%'", null);
+        cursor = db.rawQuery("SELECT * From tb_indiMoney where type LIKE '%Income%'", null);
         list = new String[cursor.getCount()];
         list2 = new String[cursor.getCount()];
         list3 = new String[cursor.getCount()];
@@ -90,7 +90,7 @@ public class IncomeFragment extends Fragment {
                 final String selection = list2[arg2]; //.getItemAtPosition(arg2).toString();
                 final CharSequence[] dialogitem = {" Update Data", " Delete Data"};
                 AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                builder.setTitle("Selecton");
+                builder.setTitle("Selection");
                 builder.setItems(dialogitem, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int item) {
                         switch (item) {

@@ -72,7 +72,7 @@ public class PersonActivity extends AppCompatActivity {
 
         DecimalFormat toRupiah = (DecimalFormat) DecimalFormat.getCurrencyInstance();
         DecimalFormatSymbols formatAngka = new DecimalFormatSymbols();
-        formatAngka.setCurrencySymbol("Rs.. ");
+        formatAngka.setCurrencySymbol("Rs. ");
         formatAngka.setDecimalSeparator(',');
         formatAngka.setGroupingSeparator('.');
         toRupiah.setDecimalFormatSymbols(formatAngka);
@@ -129,6 +129,7 @@ public class PersonActivity extends AppCompatActivity {
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_ASK_MULTIPLE_PERMISSIONS && resultCode == Activity.RESULT_OK) {
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             circleImageView.setImageBitmap(photo);
@@ -151,19 +152,18 @@ public class PersonActivity extends AppCompatActivity {
     }
 
     private void saveImage(Bitmap finalBitmap) {
-        String iname, Image_path;
+        String image_name, Image_path;
         int numberOfImages;
 
         String root = Environment.getExternalStorageDirectory().getPath() + "/indiMoney/";
-        System.out.println(root +" Root value in saveImage Function");
         File myDir = new File(root + "/image/");
         if (!myDir.exists()) {
             myDir.mkdirs();
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
-        iname = "image_" + sdf.format(new Date()) + ".jpg";
-        File file = new File(myDir, iname);
+        image_name = "image_" + sdf.format(new Date()) + ".jpg";
+        File file = new File(myDir, image_name);
         if (file.exists())
             file.delete();
         try {
@@ -185,7 +185,7 @@ public class PersonActivity extends AppCompatActivity {
                     }
                 });
 
-        Image_path = Environment.getExternalStorageDirectory().getPath() + "/indiMoney/image/" +iname;
+        Image_path = Environment.getExternalStorageDirectory().getPath() + "/indiMoney/image/" +image_name;
 
         File[] files = myDir.listFiles();
         numberOfImages=files.length;
@@ -202,9 +202,9 @@ public class PersonActivity extends AppCompatActivity {
                     File[] files = file.listFiles();
                     Arrays.sort(files);
                     for (int i = 0; i < files.length; i++) {
-                        Log.i(TAG, "FOTO PROFILE [ FILE ] : " + files[i]);
+                        Log.i(TAG, "PHOTO PROFILE [ FILE ] : " + files[i]);
                     }
-                    Log.i(TAG, "FOTO PROFILE [ GET FILE ] : " + files[files.length - 1].toString());
+                    Log.i(TAG, "PHOTO PROFILE [ GET FILE ] : " + files[files.length - 1].toString());
                     Bitmap b = BitmapFactory.decodeFile(files[files.length - 1].toString());
                     circleImageView.setImageBitmap(b);
                 }

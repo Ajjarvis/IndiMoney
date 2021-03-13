@@ -41,7 +41,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:gravity="center_horizontal"
                     android:orientation="vertical">
@@ -58,7 +58,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="RIFKY aj"
+                        android:text="AJAY\nAKSHAY\nHARSH"
                         android:textColor="#000"
                         android:textSize="20dp"
                         android:textStyle="bold" />
@@ -67,19 +67,20 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:text="Date of birth :"
+                        android:text="Enrollment NO :"
                         android:textColor="#000"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Bandung, 19 - 09 - 2001"
+                        android:text="AJ 171260107009\nAK 171260107046\nHS 171260107053"
                         android:textColor="#000" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:paddingTop="10px"
                         android:text="Email : "
                         android:textColor="#000"
                         android:textStyle="bold" />
@@ -87,20 +88,20 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="aj@gmail.com "
+                        android:text="archaudhari1402@gmail.com "
                         android:textColor="#000" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Nomor HP : "
+                        android:text="Mobile : "
                         android:textColor="#000"
                         android:textStyle="bold" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="+62 878 2383 7566"
+                        android:text="+91 95749 88667"
                         android:textColor="#000" />
 
                 </LinearLayout>

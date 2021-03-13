@@ -142,19 +142,18 @@ public class Welcome extends AppCompatActivity {
     }
 
     private void saveImage(Bitmap finalBitmap) {
-        String iname, Image_path;
+        String image_name, Image_path;
         int numberOfImages;
 
         String root = Environment.getExternalStorageDirectory().getPath() + "/indiMoney/";
-        System.out.println(root +" Root value in saveImage Function");
         File myDir = new File(root + "/image/");
         if (!myDir.exists()) {
             myDir.mkdirs();
         }
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
-        iname = "image_" + sdf.format(new Date()) + ".jpg";
-        File file = new File(myDir, iname);
+        image_name = "image_" + sdf.format(new Date()) + ".jpg";
+        File file = new File(myDir, image_name);
         if (file.exists())
             file.delete();
         try {
@@ -176,7 +175,7 @@ public class Welcome extends AppCompatActivity {
                     }
                 });
 
-        Image_path = Environment.getExternalStorageDirectory().getPath() + "/indiMoney/image/"+iname;
+        Image_path = Environment.getExternalStorageDirectory().getPath() + "/indiMoney/image/"+image_name;
         File[] files = myDir.listFiles();
         numberOfImages=files.length;
         System.out.println("Total images in Folder "+numberOfImages);
@@ -192,9 +191,9 @@ public class Welcome extends AppCompatActivity {
                     File[] files = file.listFiles();
                     Arrays.sort(files);
                     for (int i = 0; i < files.length; i++) {
-                        Log.i(TAG, "FOTO PROFILE [ FILE ] : " + files[i]);
+                        Log.i(TAG, "PHOTO PROFILE [ FILE ] : " + files[i]);
                     }
-                    Log.i(TAG, "FOTO PROFILE [ GET FILE ] : " + files[files.length - 1].toString());
+                    Log.i(TAG, "PHOTO PROFILE [ GET FILE ] : " + files[files.length - 1].toString());
                     Bitmap b = BitmapFactory.decodeFile(files[files.length - 1].toString());
                     circleImageView.setImageBitmap(b);
                 }
@@ -220,9 +219,9 @@ public class Welcome extends AppCompatActivity {
 
         if (permissionsList.size() > 0) {
             if (permissionsNeeded.size() > 0) {
-                String message = "IndiMoney wants you to give permission to access" + permissionsNeeded.get(0);
-                for (int i = 1; i < permissionsNeeded.size(); i++)
-                    message = message + ", " + permissionsNeeded.get(i);
+                String message = "IndiMoney wants the permission for accessing ";
+                for (int i = 0; i < permissionsNeeded.size(); i++)
+                    message = message + "\n\t- " + permissionsNeeded.get(i);
                 showMessageOKCancel(message,
                         new DialogInterface.OnClickListener() {
                             @Override

@@ -87,7 +87,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="13dp"
                     android:gravity="center"
-                    android:text="UANG"
+                    android:text="Money"
                     android:textColor="#a2515151"
                     android:textSize="14dp" />
 
@@ -106,7 +106,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="13dp"
                     android:gravity="center"
-                    android:text="PENDAPATAN"
+                    android:text="Income"
                     android:textColor="#a2515151"
                     android:textSize="14dp" />
 
@@ -125,7 +125,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="13dp"
                     android:gravity="center"
-                    android:text="PENGELUARAN"
+                    android:text="Money Spended"
                     android:textColor="#a2515151"
                     android:textSize="14dp" />
 

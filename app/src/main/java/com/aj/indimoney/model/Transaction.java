@@ -76,7 +76,7 @@ public class Transaction {
 
     public ArrayList<HashMap<String, String>> getList2() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String querySelect = "SELECT * From tb_indiMoney where type LIKE '%Enter%'";
+        String querySelect = "SELECT * From tb_indiMoney where type LIKE '%Income%'";
         ArrayList<HashMap<String, String>> trxList = new ArrayList<HashMap<String, String>>();
         Cursor cursor = db.rawQuery(querySelect, null);
         if (cursor.moveToFirst()) {
@@ -98,7 +98,7 @@ public class Transaction {
 
     public ArrayList<HashMap<String, String>> getList3() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
-        String querySelect = "SELECT * From tb_indiMoney where type LIKE '%Exit%'";
+        String querySelect = "SELECT * From tb_indiMoney where type LIKE '%Expense%'";
         ArrayList<HashMap<String, String>> trxList = new ArrayList<HashMap<String, String>>();
         Cursor cursor = db.rawQuery(querySelect, null);
         if (cursor.moveToFirst()) {
