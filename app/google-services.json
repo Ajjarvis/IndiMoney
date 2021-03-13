@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "360846752755",
+    "project_id": "indimoney-2ecfc",
+    "storage_bucket": "indimoney-2ecfc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:360846752755:android:6b4f4da6897170caabf086",
+        "android_client_info": {
+          "package_name": "com.aj.indimoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "360846752755-i8nvri5vrgvl13j7e7lfqi7v30sf72hr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBw39Ajls95RG1Gf89n8T7ST5GHCWNELiM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "360846752755-i8nvri5vrgvl13j7e7lfqi7v30sf72hr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
