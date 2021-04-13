@@ -29,4 +29,3 @@ But main highlight or main reason to choose this app is that it has some unique 
 This app is very inteligent but also very easy to use so, that the user can easily interact with it and he can keep track of all his expenses and income without carying the hardcopy of bills, invoices etc.
 
 # The work of this app is still in progress.
-The rest of the work of this app will be done by 08/08/2020.
