@@ -3,6 +3,8 @@ package com.aj.indimoney.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.aj.indimoney.DBHelper;
 import com.aj.indimoney.R;
 import com.aj.indimoney.model.Transaction;
 import com.aj.indimoney.model.User;
@@ -30,6 +33,8 @@ public class img2transaction extends AppCompatActivity {
     TextInputLayout textInputLayoutUtilities, textInputLayoutMoney;
     ImageView capturedBitmapImage;
 
+    String userName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,6 +50,14 @@ public class img2transaction extends AppCompatActivity {
         View btn = findViewById(R.id.buttonSimpan_i2t);
         View cancel = findViewById(R.id.textViewCancel_i2t);
 
+        User dataUser = new User(img2transaction.this);
+        JSONObject user = dataUser.getUser();
+        try {
+            userName = user.getString("name");
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         Intent intent = getIntent();
         byte[] byteArray = getIntent().getByteArrayExtra("Bytearrayimage");
         Bitmap bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
@@ -53,6 +66,22 @@ public class img2transaction extends AppCompatActivity {
         utilitiesText.setText(name_str);
         String money = intent.getStringExtra("Recognized_str_money");
         moneyText.setText(money);
+
+        System.out.println( userName.equals(name_str) );
+        if (userName != null) {
+            System.out.println(";;;;;;;;;;;;;;;;;;;;;;");
+            System.out.println(userName);
+            System.out.println(name_str);
+            if ( userName.equals(name_str) ) {
+                radioexpense.setChecked(true);
+                radioincome.setChecked(false);
+                System.out.println(";;;;;;;;;;;;;;;;;;;;;;-----------");
+            } else {
+                radioincome.setChecked(true);
+                radioexpense.setChecked(false);
+                System.out.println(";;;;;;;;;;;;;;;;;;;;;;+++++++++++");
+            }
+        }
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -83,7 +83,7 @@
                                               <map>
                                                 <entry key="color" value="000000" />
                                                 <entry key="imagePath" value="C:\Users\archa\Downloads\indimoney_logo.png" />
-                                                <entry key="scalingPercent" value="73" />
+                                                <entry key="scalingPercent" value="83" />
                                                 <entry key="trimmed" value="true" />
                                               </map>
                                             </option>
@@ -121,7 +121,6 @@
                                   <option name="values">
                                     <map>
                                       <entry key="backgroundAssetType" value="COLOR" />
-                                      <entry key="outputName" value="indimoney_logo" />
                                     </map>
                                   </option>
                                 </PersistentState>

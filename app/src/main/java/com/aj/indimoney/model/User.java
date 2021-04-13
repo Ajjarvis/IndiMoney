@@ -80,20 +80,20 @@ public class User {
     public JSONObject getUser() {
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         Cursor cursor = db.rawQuery("Select * from tb_user where id=1", null);
-        JSONObject usernya = new JSONObject();
+        JSONObject user = new JSONObject();
         if (cursor.moveToFirst()) {
             try {
-                usernya.put("name", cursor.getString(cursor.getColumnIndex("name")));
-                usernya.put("email", cursor.getString(cursor.getColumnIndex("email")));
-                usernya.put("money", cursor.getString(cursor.getColumnIndex("money")));
-                usernya.put("income", cursor.getString(cursor.getColumnIndex("income")));
-                usernya.put("expense", cursor.getString(cursor.getColumnIndex("expense")));
+                user.put("name", cursor.getString(cursor.getColumnIndex("name")));
+                user.put("email", cursor.getString(cursor.getColumnIndex("email")));
+                user.put("money", cursor.getString(cursor.getColumnIndex("money")));
+                user.put("income", cursor.getString(cursor.getColumnIndex("income")));
+                user.put("expense", cursor.getString(cursor.getColumnIndex("expense")));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
         cursor.close();
         db.close();
-        return usernya;
+        return user;
     }
 }
